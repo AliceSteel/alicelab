@@ -1,6 +1,9 @@
 <template>
   <main>
-    <header-comp :class="{ scroll: isScroll }" :color="isScroll ? '#000' : '#fff'" />
+    <header-comp
+      :class="{ scroll: isScroll }"
+      :color="isScroll || $route.name === 'About' ? '#000' : '#fff'"
+    />
     <router-view />
     <footer-comp
       v-if="$route.name !== 'Projects'"

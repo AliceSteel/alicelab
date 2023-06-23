@@ -15,7 +15,7 @@
             <h2 :id="h2Id">{{ title }}</h2>
             <p>{{ text1 }}</p>
             <p>{{ text2 }}</p>
-            <router-link :to="{ name: linkTo }" class="arrow text_black"
+            <router-link :to="linkTo" class="arrow text_black"
               ><span class="menu_link">{{ buttonText }}</span>
               <span>
                 <svg
@@ -60,7 +60,10 @@ export default {
     h2Id: String,
     itemId: String,
     buttonText: String,
-    linkTo: String
+    linkTo: {
+      type: String,
+      default: '#contact'
+    }
   }
 }
 </script>

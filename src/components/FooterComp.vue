@@ -2,22 +2,13 @@
   <footer :class="footerTheme">
     <div class="container">
       <div class="footer_wrap">
-        <div class="copyright">© 2021 - ITERVIEW / All Rights Reserved</div>
+        <div class="copyright">© 2023 - ALICELAB / All Rights Reserved</div>
         <div class="social">
           <ul>
-            <li>Find us online:</li>
+            <li>Contact on socials:</li>
             <li>
               <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="nofollow, noreferrer"
-                class="menu_link"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/olga-garkusha-49598a12b/"
                 target="_blank"
                 rel="nofollow, noreferrer"
                 class="menu_link"

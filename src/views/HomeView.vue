@@ -13,7 +13,7 @@
       :title="this.aboutUsData[0].title"
       :text1="this.aboutUsData[0].text1"
       :buttonText="this.aboutUsData[0].button"
-      linkTo="About"
+      linkTo="/about"
     >
     </about-comp>
     <!-- featured section------------------------------------------------------------------ -->
@@ -146,6 +146,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.homepage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  img {
+    height: 100%;
+  }
+  h1 {
+    position: absolute;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    color: #c4091e;
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+  }
+}
+
 .featured_project_2 {
   //.video_wrap
   width: 100%;

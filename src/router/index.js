@@ -29,11 +29,7 @@ const routes = [
     name: 'ClientsPage',
     component: () => import(/* webpackChunkName: "Clients" */ '@/views/ClientsPage.vue')
   },
-  {
-    path: '/contact',
-    name: 'ContactPage',
-    component: () => import(/* webpackChunkName: "Contact" */ '@/views/ContactPage.vue')
-  },
+
   {
     path: '/:catchAll(.*)',
     name: '404Page',

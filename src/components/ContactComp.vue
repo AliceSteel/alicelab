@@ -102,7 +102,7 @@ export default {
           '%0a<b>Message: </b>' +
           this.message
         fetch(
-          `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=${message_text}&parse_mode=HTML`
+          `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=FromAliceLab${message_text}&parse_mode=HTML`
         )
           .then((resp) => {
             return resp.json()
