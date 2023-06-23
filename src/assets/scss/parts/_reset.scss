@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+ul li a,
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
