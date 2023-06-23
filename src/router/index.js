@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/projects',
     name: 'Projects',
-    component: () => import(/* webpackChunkName: "About" */ '@/views/projects/ProjectsPage.vue')
+    component: () => import(/* webpackChunkName: "About" */ '@/views/ClientsPage.vue')
   },
   {
     path: '/projects/:id',
@@ -24,11 +24,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "About" */ '@/views/projects/ProjectN.vue')
   },
   //___________________________________________________________________
-  {
-    path: '/clients',
-    name: 'ClientsPage',
-    component: () => import(/* webpackChunkName: "Clients" */ '@/views/ClientsPage.vue')
-  },
 
   {
     path: '/:catchAll(.*)',

@@ -1,24 +1,19 @@
 <template>
   <div>
     <div id="side_block">
-      <nav id="mobile_menu" @click="toggleMenu()">
-        <ul>
-          <li>
-            <router-link to="/about" class="menu_link"><sup>(1)</sup>About</router-link>
-          </li>
-          <li>
-            <router-link to="/projects" class="menu_link"><sup>(2)</sup>Projects</router-link>
-          </li>
-          <li>
-            <router-link to="/clients" class="menu_link"><sup>(3)</sup>Clients</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'About', hash: '#contact' }" class="menu_link"
-              ><sup>(4)</sup>Contact</router-link
-            >
-          </li>
-        </ul>
-      </nav>
+      <ul class="side_menu" id="mobile_menu" @click="toggleMenu()">
+        <li>
+          <router-link to="/about" class="menu_link"><sup>(1)</sup>About</router-link>
+        </li>
+        <li>
+          <router-link to="/projects" class="menu_link"><sup>(2)</sup>Projects</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'About', hash: '#contact' }" class="menu_link"
+            ><sup>(3)</sup>Contact</router-link
+          >
+        </li>
+      </ul>
     </div>
     <header id="header">
       <router-link to="/">
@@ -117,9 +112,6 @@ button.hamburger {
   z-index: 100;
   transition: all 0.3s ease;
   transform: translateX(-100%);
-}
-
-nav#mobile_menu {
   padding: 12% 0;
 }
 
@@ -138,64 +130,6 @@ nav#mobile_menu {
 .hamburger-inner::before,
 .hamburger-inner::after {
   background-color: inherit !important;
-}
-
-#mobile_menu ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-top: 1px solid rgba(0, 0, 0, 0.8);
-
-  li {
-    width: 100%;
-    height: 120px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-
-    a {
-      height: 100%;
-      padding: 1rem 11%;
-      text-decoration: none;
-      text-transform: capitalize;
-      font-size: 4.5rem;
-    }
-  }
-}
-
-.menu_link,
-.menu_link_white {
-  color: inherit;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.menu_link::after {
-  background-color: #000;
-}
-.menu_link::after,
-.menu_link_white::after {
-  content: '';
-  opacity: 0;
-  position: absolute;
-  z-index: 100;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  transform: translateX(calc(-100% - 0.1rem));
-  transition: opacity 400ms, transform 400ms;
-}
-.menu_link_white::after {
-  background-color: #fff;
-}
-
-.menu_link_white:hover::after,
-.menu_link:hover::after,
-.menu_link:focus::after,
-.menu_link:focus-visible::after {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .lock {

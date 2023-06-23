@@ -1,7 +1,5 @@
 <template>
   <div>
-    <header-comp logo="INTERVIEW_logo.png" :color="this.isScroll ? '#000' : '#fff'"></header-comp>
-
     <main v-if="list !== null">
       <section
         v-for="project in list"
@@ -50,13 +48,10 @@
 
 <script>
 import axios from 'axios'
-import HeaderComp from '@/components/HeaderComp.vue'
 
 export default {
   name: 'ProjectsPage',
-  components: {
-    HeaderComp
-  },
+
   data() {
     return {
       list: null
@@ -67,7 +62,7 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.get('data/projects.json').then((resp) => {
+      axios.get('/assets/data/projects.json').then((resp) => {
         this.list = resp.data
       })
     }
@@ -76,5 +71,85 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('@/assets/scss/projects.scss');
+.project_bg {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+h2 {
+  font-size: 4rem;
+  line-height: 4.75rem;
+}
+.project_01 {
+  margin-top: -42px;
+  background-image: url('/assets/images/girl_p4@1440.jpg');
+}
+.project_02 {
+  background-image: url('/assets/images/project_reebok@1440.jpg');
+}
+
+.project_03 {
+  background-image: url('/assets/images/project_lesMiles@1440.jpg');
+}
+
+.project_04 {
+  background-image: url('/assets/images/b&w_subway@1440.jpg');
+}
+
+.projects_wrap {
+  width: 90%;
+  height: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 668px 0 81px;
+  position: relative;
+}
+
+.project_descr {
+  width: 62%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.project_id_wrap {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pr_text {
+  width: 68%;
+  min-width: 240px;
+}
+.arrow_wrap {
+  width: 37%;
+  min-width: 140px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 2rem;
+}
+.project_title {
+  padding-bottom: 2rem;
+  width: 90%;
+}
+
+@media screen and (max-width: 636px) {
+  .project_id_wrap {
+    padding-bottom: 1rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}
 </style>

@@ -197,6 +197,21 @@ export default {
   justify-content: flex-start;
   align-items: flex-end;
 }
+#featured_project_4 {
+  padding: 73px 0 101px;
+  .text_wrap {
+    max-width: 476px;
+  }
+}
+
+.pic_wrap_project_4 {
+  margin: 50px 0;
+  width: 100%;
+}
+
+.project_4_slider {
+  width: 50%;
+}
 
 @media screen and (max-width: 1000px) {
   .content_over_video .text_wrap {
