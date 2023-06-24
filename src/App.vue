@@ -39,6 +39,9 @@ export default {
         this.isScroll = window.scrollY > document.querySelector('section').offsetHeight
       }
     }
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.toggleFixedHeader)
   }
 }
 </script>

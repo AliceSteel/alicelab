@@ -1,18 +1,18 @@
 [
   {
-    "company": "KreepMaster",
+    "company": "MetalHead",
     "id": "01",
     "title": "Challenging Ordinary",
-    "descr": "Oridnary is a Gothenburg-based creative development studio. Through technology and design they differentiate artists, creatives and brands to help them break through the noise. Oridnary likes to challenge the ordinary.",
-    "pic1": "/assets/images/girl_p3@828.jpg",
+    "descr": "MetalHead is a music-sharing app, where unprofessional musicians can hear opinion on their creations and music consumers can discover new songs. Built with Vue(+Vue-Route, Pinia) and Firebase, deployed on Vercel.",
+    "pic1": "/assets/images/drummer.png",
     "pic2": "/assets/images/orange_lips@1440.jpg",
     "pic3": "/assets/images/red_dots@720.jpg",
     "pic4": "/assets/images/girl_sitting@713.jpg",
-    "pic5": "/assets/images/clients/kreepmaster.jpg",
+    "pic5": "",
     "video": "/assets/images/abstract_lights"
   },
   {
-    "company": "MetalHead",
+    "company": "KreepMaster",
     "id": "02",
     "title": "Dream Bigger",
     "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -20,31 +20,19 @@
     "pic2": "/assets/images/palm@1920.jpg",
     "pic3": "/assets/images/sea@1920.jpg",
     "pic4": "/assets/images/leaf@1920.jpg",
-    "pic5": "/assets/images/clients/qotsa.jpg",
+    "pic5": "/assets/images/clients/kreepmaster.jpg",
     "video": "/assets/images/girl_rolling"
   },
   {
-    "company": "Les Miles",
+    "company": "E-commerce",
     "id": "03",
-    "title": "Express Yourself",
-    "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "title": "Be Yourself",
+    "descr": "Online shop template built with React(+Router-DOM, Redux), Firebase and Stripe. Deployed on Netlify.",
     "pic1": "/assets/images/veil@828.jpg",
     "pic2": "/assets/images/girl_p4@1440.jpg",
     "pic3": "/assets/images/project_lesMiles@1440.jpg",
     "pic4": "/assets/images/girl_sitting@713.jpg",
     "pic5": "/assets/images/girl_p3@828.jpg",
     "video": "/assets/images/woman_dancing"
-  },
-  {
-    "company": "Re-View",
-    "id": "04",
-    "title": "Roots",
-    "descr": "Re-View is NYC-based creative development studio. Through technology and design they differentiate artists, creatives and brands to help them break through the noise.",
-    "pic1": "/assets/images/b&w_subway@1440.jpg",
-    "pic2": "/assets/images/b&w_girl_blonde@1920.jpg",
-    "pic3": "/assets/images/sea_b&w@686.jpg",
-    "pic4": "/assets/images/b&w_girl_freckelz@686.jpg",
-    "pic5": "/assets/images/b&w_subway@686.jpg",
-    "video": "N/A"
   }
 ]

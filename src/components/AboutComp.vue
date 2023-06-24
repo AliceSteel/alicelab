@@ -12,10 +12,15 @@
         </atropos>
         <div class="about_us_item_text">
           <div class="text_wrap">
-            <h2 :id="h2Id">{{ title }}</h2>
-            <p>{{ text1 }}</p>
-            <p>{{ text2 }}</p>
-            <router-link :to="linkTo" class="arrow text_black"
+            <h2 :id="h2Id" style="animation-delay: 0s" :class="{ slide_text: isScrolled }">
+              {{ title }}
+            </h2>
+            <p style="animation-delay: 2s" :class="{ slide_text: isScrolled }">{{ text1 }}</p>
+            <p style="animation-delay: 3s" :class="{ slide_text: isScrolled }">{{ text2 }}</p>
+            <router-link
+              :to="linkTo"
+              class="arrow text_black slide_text"
+              style="animation-delay: 4s"
               ><span class="menu_link">{{ buttonText }}</span>
               <span>
                 <svg
@@ -64,11 +69,43 @@ export default {
       type: String,
       default: '#contact'
     }
+  },
+  data() {
+    return {
+      isScrolleds: false
+    }
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > document.querySelector('section').offsetHeight
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
 
 <style lang="scss">
+.slide_text {
+  animation: slide-left 2s forwards;
+  opacity: 0;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translate(101%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .about_us_wrap {
     grid-template-columns: 1fr;
