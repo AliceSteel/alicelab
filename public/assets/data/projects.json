@@ -9,7 +9,8 @@
     "pic3": "/assets/images/red_dots@720.jpg",
     "pic4": "/assets/images/girl_sitting@713.jpg",
     "pic5": "",
-    "video": "/assets/images/abstract_lights"
+    "video": "/assets/images/abstract_lights",
+    "websiteUrl": "https://metalhead-six.vercel.app/"
   },
   {
     "company": "KreepMaster",
@@ -21,7 +22,8 @@
     "pic3": "/assets/images/sea@1920.jpg",
     "pic4": "/assets/images/leaf@1920.jpg",
     "pic5": "/assets/images/clients/kreepmaster.jpg",
-    "video": "/assets/images/girl_rolling"
+    "video": "/assets/images/girl_rolling",
+    "websiteUrl": "https://metalhead-six.vercel.app/"
   },
   {
     "company": "E-commerce",
@@ -33,6 +35,7 @@
     "pic3": "/assets/images/project_lesMiles@1440.jpg",
     "pic4": "/assets/images/girl_sitting@713.jpg",
     "pic5": "/assets/images/girl_p3@828.jpg",
-    "video": "/assets/images/woman_dancing"
+    "video": "/assets/images/woman_dancing",
+    "websiteUrl": "https://e-commerce-template-2022.netlify.app/"
   }
 ]

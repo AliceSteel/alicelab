@@ -30,11 +30,12 @@ export default {
       isScroll: false
     }
   },
-  created() {
+  mounted() {
     window.addEventListener('scroll', this.toggleFixedHeader)
   },
   methods: {
     toggleFixedHeader() {
+      console.log('header listener')
       if (document.querySelector('section').offsetHeight !== null) {
         this.isScroll = window.scrollY > document.querySelector('section').offsetHeight
       }

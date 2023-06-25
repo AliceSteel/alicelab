@@ -25,6 +25,7 @@
         :text="this.projectData[0].descr"
         svgClass="svg_white"
         :picURL="this.projectData[0].pic1"
+        :websiteUrl="this.projectData[0].websiteUrl"
         linkClass="text_white"
         underlineClass="menu_link_white"
       >
@@ -44,10 +45,7 @@
             <h3>Project</h3>
             <h2>{{ this.projectData[1].title }}</h2>
             <p>{{ this.projectData[1].descr }}</p>
-            <router-link
-              :to="{ name: 'ProjectN', params: { id: this.projectData[1].id } }"
-              class="arrow text_white"
-            >
+            <a :href="this.projectData[1].websiteUrl" target="_blank" class="arrow text_white">
               <span class="menu_link_white">View Project</span>
               <span>
                 <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +56,7 @@
                   />
                 </svg>
               </span>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>

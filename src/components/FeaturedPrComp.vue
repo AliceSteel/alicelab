@@ -12,7 +12,7 @@
 
         <p class="align_r">{{ text }}</p>
 
-        <router-link :to="{ name: 'ProjectN', params: { id: id } }" :class="'arrow ' + linkClass"
+        <a :href="websiteUrl" target="_blank" :class="'arrow ' + linkClass"
           ><span :class="underlineClass">View Project</span>
           <span>
             <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@
               />
             </svg>
           </span>
-        </router-link>
+        </a>
       </div>
       <atropos class="project_pic" v-if="picURL !== ''" :activeOffset="20">
         <img :src="picURL" alt="Featued Project" data-atropos-offset="-5" />
@@ -48,7 +48,8 @@ export default {
     svgClass: String,
     picURL: String,
     linkClass: String,
-    underlineClass: String
+    underlineClass: String,
+    websiteUrl: String
   }
 }
 </script>
