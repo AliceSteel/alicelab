@@ -34,7 +34,7 @@
           <a
             v-if="this.$route.name === 'About'"
             :href="linkTo"
-            class="arrow text_black invisible"
+            class="w100 arrow text_black invisible"
             :class="{ slide_text: isScrolled }"
             style="animation-delay: 4s"
             ><span class="menu_link">{{ aboutContent.buttonText }}</span>
@@ -55,7 +55,7 @@
           <router-link
             v-else
             :to="linkTo"
-            class="arrow text_black invisible"
+            class="w100 arrow text_black invisible"
             :class="{ slide_text: isScrolled }"
             style="animation-delay: 4s"
             ><span class="menu_link">{{ aboutContent.buttonText }}</span>
@@ -109,13 +109,14 @@ export default {
       ? (this.isScrolled = true)
       : window.addEventListener('scroll', this.handleScroll)
   },
-  beforeUnmount() {
-    console.log('listener removed')
-    window.removeEventListener('scroll', this.handleScroll)
-  },
+
   methods: {
     handleScroll() {
       this.isScrolled = window.scrollY > window.screen.height / 2
+      if (this.isScrolled) {
+        window.removeEventListener('scroll', this.handleScroll)
+        console.log('listener removed')
+      }
     }
   }
 }
