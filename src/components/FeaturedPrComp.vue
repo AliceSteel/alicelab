@@ -3,16 +3,16 @@
     <div class="project_content_wrap">
       <div :class="'text_wrap ' + textClass">
         <div class="project_id">
-          {{ id }}
+          {{ projectContent.id }}
         </div>
 
         <h3>Featured Project</h3>
 
-        <h2 class="align_r">{{ title }}</h2>
+        <h2 class="align_r">{{ projectContent.title }}</h2>
 
-        <p class="align_r">{{ text }}</p>
+        <p class="align_r">{{ projectContent.text }}</p>
 
-        <a :href="websiteUrl" target="_blank" :class="'arrow ' + linkClass"
+        <a :href="projectContent.websiteUrl" target="_blank" :class="'arrow ' + linkClass"
           ><span :class="underlineClass">View Project</span>
           <span>
             <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -25,8 +25,8 @@
           </span>
         </a>
       </div>
-      <atropos class="project_pic" v-if="picURL !== ''" :activeOffset="20">
-        <img :src="picURL" alt="Featued Project" data-atropos-offset="-5" />
+      <atropos class="project_pic" v-if="projectContent.pic1 !== ''" :activeOffset="20">
+        <img :src="projectContent.pic1" alt="Featued Project" data-atropos-offset="-5" />
       </atropos>
     </div>
   </div>
@@ -40,16 +40,14 @@ export default {
   name: 'FeaturesProjectComp',
   components: { Atropos },
   props: {
-    title: String,
-    id: String,
+    projectContent: {
+      type: Object,
+      required: true
+    },
     textClass: String,
-    text: String,
-    svgColor: String,
     svgClass: String,
-    picURL: String,
-    linkClass: String,
     underlineClass: String,
-    websiteUrl: String
+    linkClass: String
   }
 }
 </script>

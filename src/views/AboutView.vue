@@ -1,22 +1,12 @@
 <template>
   <div>
-    <section id="learn_about" v-if="this.aboutUsData !== null">
-      <about-comp
-        :picVertURL="this.aboutUsData[1].pic1"
-        :picHorURL="this.aboutUsData[1].pic2"
-        :title="this.aboutUsData[1].title"
-        :text1="this.aboutUsData[1].text1"
-        :text2="this.aboutUsData[1].text2"
-        h2Id="title_page_about"
-        itemId="page_about_item"
-        :buttonText="this.aboutUsData[1].button"
-      >
-      </about-comp>
+    <section id="learn_about" v-if="aboutUsData !== null">
+      <about-comp :aboutContent="aboutUsData" :linkTo="'#contact'" />
     </section>
 
     <section id="services"></section>
     <section id="contact">
-      <contact-comp></contact-comp>
+      <contact-comp />
     </section>
   </div>
 </template>
@@ -37,7 +27,7 @@ export default {
 
   created() {
     axios.get('/assets/data/aboutUs.json').then((resp) => {
-      this.aboutUsData = resp.data
+      this.aboutUsData = resp.data[1]
     })
   }
 }

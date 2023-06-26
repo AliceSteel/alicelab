@@ -1,20 +1,20 @@
 [
   {
     "h1": "Alice Lab",
-    "title": "Hi, I'm Alice, Front-End Developer Based in Copenhagen, Denmark",
-    "text1": "Having great pleasure in building everything beautifully.",
-    "text2": "N/A",
-    "pic1": "/assets/images/special_photo@476.jpg",
-    "pic2": "/assets/images/special_photo_b&w@476.jpg",
-    "button": "About me"
+    "titleL1": "Hi, I'm Alice, Front-End Developer",
+    "text1": "based in Copenhagen, Denmark and I find great pleasure",
+    "text2": "in building everything beautifully.",
+    "picVertURL": "/assets/images/special_photo@476.jpg",
+    "picHorURL": "/assets/images/special_photo_b&w@476.jpg",
+    "buttonText": "About me"
   },
   {
-    "h1": "N/A",
-    "title": "Learn About Our Special Approach",
-    "text1": "Our process is collaborative and iterative. With every new project, I love transforming dream designs into fully functional websites and I mostly build with VueJS.  ",
+    "h1": "",
+    "titleL1": "Our process is collaborative and iterative.",
+    "text1": "With every new project, I love transforming dream designs into fully functional websites and I mostly build with VueJS.  ",
     "text2": "If you are interested in collaboration, please contact me in the form below.",
-    "pic1": "/assets/images/about@476.jpg",
-    "pic2": "/assets/images/about@679.jpg",
-    "button": "Contact"
+    "picVertURL": "/assets/images/about@476.jpg",
+    "picHorURL": "/assets/images/about@679.jpg",
+    "buttonText": "Contact"
   }
 ]

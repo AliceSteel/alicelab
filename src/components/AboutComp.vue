@@ -2,30 +2,63 @@
   <section class="about_us">
     <div class="container about_us_wrap">
       <atropos class="about_us_item_vertical" :activeOffset="20" :rotateXMax="5" :shadow-scale="0">
-        <img :src="picVertURL" alt="about us" data-atropos-offset="5" />
+        <img :src="aboutContent.picVertURL" alt="about us" data-atropos-offset="5" />
       </atropos>
       <div class="about_us_item_text">
         <div class="text_wrap">
           <h2
-            :id="h2Id"
-            class="invisible"
+            class="invisible w100"
             style="animation-delay: 0s"
             :class="{ slide_text: isScrolled }"
           >
-            {{ title }}
+            {{ aboutContent.titleL1 }}
           </h2>
-          <p class="invisible" :class="{ slide_text: isScrolled }" style="animation-delay: 2s">
-            {{ text1 }}
+          <h2
+            class="invisible w100"
+            style="animation-delay: 1s"
+            :class="{ slide_text: isScrolled }"
+          >
+            {{ aboutContent.titleL2 }}
+          </h2>
+          <p class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 2s">
+            {{ aboutContent.text1 }}
           </p>
-          <p class="invisible" :class="{ slide_text: isScrolled }" style="animation-delay: 3s">
-            {{ text2 }}
+          <p
+            v-if="aboutContent.text2"
+            class="invisible w100"
+            :class="{ slide_text: isScrolled }"
+            style="animation-delay: 3s"
+          >
+            {{ aboutContent.text2 }}
           </p>
+          <a
+            v-if="this.$route.name === 'About'"
+            :href="linkTo"
+            class="arrow text_black invisible"
+            :class="{ slide_text: isScrolled }"
+            style="animation-delay: 4s"
+            ><span class="menu_link">{{ aboutContent.buttonText }}</span>
+            <span>
+              <svg
+                width="30"
+                height="10"
+                viewBox="0 0 30 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 6.09375V4.51562L27.7031 4.57812L26.2656 2.78125L26.25 0.625L30 5.3125L26.25 9.96875L26.2344 7.95312L27.6875 6.17188L0 6.09375Z"
+                  fill="black"
+                />
+              </svg> </span
+          ></a>
           <router-link
+            v-else
             :to="linkTo"
             class="arrow text_black invisible"
             :class="{ slide_text: isScrolled }"
             style="animation-delay: 4s"
-            ><span class="menu_link">{{ buttonText }}</span>
+            ><span class="menu_link">{{ aboutContent.buttonText }}</span>
             <span>
               <svg
                 width="30"
@@ -43,9 +76,9 @@
           </router-link>
         </div>
       </div>
-      <div class="about_us_item_horizontal" :id="itemId">
+      <div class="about_us_item_horizontal">
         <atropos class="pic_wrap" :activeOffset="30">
-          <img :src="picHorURL" alt="about us" data-atropos-offset="5" />
+          <img :src="aboutContent.picHorURL" alt="about us" data-atropos-offset="5" />
         </atropos>
       </div>
     </div>
@@ -60,18 +93,11 @@ export default {
   name: 'AboutComp',
   components: { Atropos },
   props: {
-    picVertURL: String,
-    picHorURL: String,
-    title: String,
-    text1: String,
-    text2: String,
-    h2Id: String,
-    itemId: String,
-    buttonText: String,
-    linkTo: {
-      type: String,
-      default: '#contact'
-    }
+    aboutContent: {
+      required: true,
+      type: Object
+    },
+    linkTo: String
   },
   data() {
     return {
@@ -79,7 +105,9 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    this.$route.name === 'About'
+      ? (this.isScrolled = true)
+      : window.addEventListener('scroll', this.handleScroll)
   },
   beforeUnmount() {
     console.log('listener removed')

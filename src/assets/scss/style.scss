@@ -98,14 +98,13 @@ p {
   }
 
   &_horizontal {
-    .pic_wrap {
-      max-width: 679px;
-    }
-
     width: 100%;
     padding-top: 100px;
     display: flex;
     justify-content: flex-end;
+    .pic_wrap {
+      max-width: 679px;
+    }
   }
 }
 
@@ -116,8 +115,10 @@ p {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-  max-width: 405px;
+  //max-width: 405px;
+  min-width: 200px;
   overflow: hidden;
+  padding: 0 80px;
 }
 
 #learn_about {

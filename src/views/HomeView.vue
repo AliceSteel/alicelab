@@ -3,31 +3,19 @@
     <section>
       <atropos class="homepage" :rotateXMax="5" :rotateYMax="5">
         <img src="/assets/images/Homepage@1440.png" alt="homepage" data-atropos-offset="-5" />
-        <h1>{{ aboutUsData[0].h1 }}</h1>
+        <h1>{{ aboutUsData.h1 }}</h1>
       </atropos>
     </section>
     <!-- description section--------------------------------------------------------------- -->
-    <about-comp
-      :picVertURL="this.aboutUsData[0].pic1"
-      :picHorURL="this.aboutUsData[0].pic2"
-      :title="this.aboutUsData[0].title"
-      :text1="this.aboutUsData[0].text1"
-      :buttonText="this.aboutUsData[0].button"
-      linkTo="/about"
-    >
-    </about-comp>
+    <about-comp :aboutContent="aboutUsData" :linkTo="'/about'"> </about-comp>
     <!-- featured section------------------------------------------------------------------ -->
     <section id="featured_project_1">
       <featured-pr-comp
-        :title="this.projectData[0].title"
-        :id="this.projectData[0].id"
-        textClass="project_text_1 text_white"
-        :text="this.projectData[0].descr"
-        svgClass="svg_white"
-        :picURL="this.projectData[0].pic1"
-        :websiteUrl="this.projectData[0].websiteUrl"
-        linkClass="text_white"
-        underlineClass="menu_link_white"
+        :projectContent="projectData[0]"
+        :textClass="'project_text_1 text_white'"
+        :svgClass="'svg_white'"
+        :linkClass="'text_white'"
+        :underlineClass="'menu_link_white'"
       >
       </featured-pr-comp>
     </section>
@@ -43,9 +31,9 @@
           <div class="text_wrap text_white align_l">
             <div class="project_id">{{ this.projectData[1].id }}</div>
             <h3>Project</h3>
-            <h2>{{ this.projectData[1].title }}</h2>
-            <p>{{ this.projectData[1].descr }}</p>
-            <a :href="this.projectData[1].websiteUrl" target="_blank" class="arrow text_white">
+            <h2>{{ projectData[1].title }}</h2>
+            <p>{{ projectData[1].descr }}</p>
+            <a :href="projectData[1].websiteUrl" target="_blank" class="arrow text_white">
               <span class="menu_link_white">View Project</span>
               <span>
                 <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -64,13 +52,10 @@
 
     <section id="featured_project_3">
       <featured-pr-comp
-        :title="this.projectData[2].title"
-        :id="this.projectData[2].id"
-        textClass="project_text_1 text_black"
-        :text="this.projectData[2].descr"
-        :picURL="this.projectData[2].pic1"
-        linkClass="text_black"
-        underlineClass="menu_link"
+        :projectContent="projectData[2]"
+        :textClass="'project_text_1 text_black'"
+        :linkClass="'text_black'"
+        :underlineClass="'menu_link'"
       >
       </featured-pr-comp>
     </section>
@@ -100,7 +85,7 @@ export default {
 
   created() {
     axios.get('/assets/data/aboutUs.json').then((resp) => {
-      this.aboutUsData = resp.data
+      this.aboutUsData = resp.data[0]
     })
     axios.get('/assets/data/projects.json').then((resp) => {
       this.projectData = resp.data
