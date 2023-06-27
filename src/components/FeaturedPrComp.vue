@@ -1,18 +1,23 @@
 <template>
-  <div class="container w100 container_featured">
+  <div class="container container_featured">
     <div class="project_content_wrap">
-      <div :class="'text_wrap ' + textClass">
-        <div class="project_id">
+      <div :class="textClass">
+        <div class="project_id" style="animation-delay: 0s">
           {{ projectContent.id }}
         </div>
 
-        <h3>Featured Project</h3>
+        <h3>Project</h3>
 
-        <h2 class="align_r">{{ projectContent.title }}</h2>
+        <h2>{{ projectContent.title }}</h2>
 
-        <p class="align_r">{{ projectContent.text }}</p>
+        <p>{{ projectContent.text }}</p>
 
-        <a :href="projectContent.websiteUrl" target="_blank" :class="'arrow ' + linkClass"
+        <a
+          :href="projectContent.websiteUrl"
+          target="_blank"
+          class="arrow"
+          style="animation-delay: 0s"
+          :class="linkClass"
           ><span :class="underlineClass">View Project</span>
           <span>
             <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -53,6 +58,35 @@ export default {
 </script>
 
 <style lang="scss">
+.project_content_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5%;
+
+  &.gap15 {
+    gap: 15%;
+  }
+}
+
+.project_text_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+  gap: 1.5rem;
+  padding: 0 80px;
+  overflow: hidden;
+}
+
+.project_pic {
+  width: 100%;
+  max-width: 828px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1000px) {
   .container_featured {
     padding: 0;

@@ -1,86 +1,67 @@
 <template>
-  <section class="about_us">
-    <div class="container about_us_wrap">
-      <atropos class="about_us_item_vertical" :activeOffset="20" :rotateXMax="5" :shadow-scale="0">
-        <img :src="aboutContent.picVertURL" alt="about us" data-atropos-offset="5" />
+  <section class="about_us_wrap">
+    <atropos class="about_us_item_vertical" :activeOffset="20" :rotateXMax="5" :shadow-scale="0">
+      <img :src="aboutContent.picVertURL" alt="about us" data-atropos-offset="5" />
+    </atropos>
+    <!-- <div class="about_us_item_text">-->
+    <div class="text_wrap">
+      <h2 class="invisible w100" style="animation-delay: 0s">
+        {{ aboutContent.titleL1 }}
+      </h2>
+
+      <p class="invisible w100" style="animation-delay: 1s">
+        {{ aboutContent.text1 }}
+      </p>
+      <p v-if="aboutContent.text2" class="invisible w100" style="animation-delay: 2s">
+        {{ aboutContent.text2 }}
+      </p>
+      <a
+        v-if="this.$route.name === 'About'"
+        :href="linkTo"
+        class="w100 arrow text_black invisible"
+        style="animation-delay: 3s"
+        ><span class="menu_link">{{ aboutContent.buttonText }}</span>
+        <span>
+          <svg
+            width="30"
+            height="10"
+            viewBox="0 0 30 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 6.09375V4.51562L27.7031 4.57812L26.2656 2.78125L26.25 0.625L30 5.3125L26.25 9.96875L26.2344 7.95312L27.6875 6.17188L0 6.09375Z"
+              fill="black"
+            />
+          </svg> </span
+      ></a>
+      <router-link
+        v-else
+        :to="linkTo"
+        class="w100 arrow text_black invisible"
+        style="animation-delay: 4s"
+        ><span class="menu_link">{{ aboutContent.buttonText }}</span>
+        <span>
+          <svg
+            width="30"
+            height="10"
+            viewBox="0 0 30 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 6.09375V4.51562L27.7031 4.57812L26.2656 2.78125L26.25 0.625L30 5.3125L26.25 9.96875L26.2344 7.95312L27.6875 6.17188L0 6.09375Z"
+              fill="black"
+            />
+          </svg>
+        </span>
+      </router-link>
+      <!--  </div>-->
+    </div>
+    <div class="about_us_item_horizontal">
+      <atropos class="pic_wrap" :activeOffset="30">
+        <img :src="aboutContent.picHorURL" alt="about us" data-atropos-offset="5" />
       </atropos>
-      <div class="about_us_item_text">
-        <div class="text_wrap">
-          <h2
-            class="invisible w100"
-            style="animation-delay: 0s"
-            :class="{ slide_text: isScrolled }"
-          >
-            {{ aboutContent.titleL1 }}
-          </h2>
-          <h2
-            class="invisible w100"
-            style="animation-delay: 1s"
-            :class="{ slide_text: isScrolled }"
-          >
-            {{ aboutContent.titleL2 }}
-          </h2>
-          <p class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 2s">
-            {{ aboutContent.text1 }}
-          </p>
-          <p
-            v-if="aboutContent.text2"
-            class="invisible w100"
-            :class="{ slide_text: isScrolled }"
-            style="animation-delay: 3s"
-          >
-            {{ aboutContent.text2 }}
-          </p>
-          <a
-            v-if="this.$route.name === 'About'"
-            :href="linkTo"
-            class="w100 arrow text_black invisible"
-            :class="{ slide_text: isScrolled }"
-            style="animation-delay: 4s"
-            ><span class="menu_link">{{ aboutContent.buttonText }}</span>
-            <span>
-              <svg
-                width="30"
-                height="10"
-                viewBox="0 0 30 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 6.09375V4.51562L27.7031 4.57812L26.2656 2.78125L26.25 0.625L30 5.3125L26.25 9.96875L26.2344 7.95312L27.6875 6.17188L0 6.09375Z"
-                  fill="black"
-                />
-              </svg> </span
-          ></a>
-          <router-link
-            v-else
-            :to="linkTo"
-            class="w100 arrow text_black invisible"
-            :class="{ slide_text: isScrolled }"
-            style="animation-delay: 4s"
-            ><span class="menu_link">{{ aboutContent.buttonText }}</span>
-            <span>
-              <svg
-                width="30"
-                height="10"
-                viewBox="0 0 30 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 6.09375V4.51562L27.7031 4.57812L26.2656 2.78125L26.25 0.625L30 5.3125L26.25 9.96875L26.2344 7.95312L27.6875 6.17188L0 6.09375Z"
-                  fill="black"
-                />
-              </svg>
-            </span>
-          </router-link>
-        </div>
-      </div>
-      <div class="about_us_item_horizontal">
-        <atropos class="pic_wrap" :activeOffset="30">
-          <img :src="aboutContent.picHorURL" alt="about us" data-atropos-offset="5" />
-        </atropos>
-      </div>
     </div>
   </section>
 </template>
@@ -107,12 +88,13 @@ export default {
   mounted() {
     this.$route.name === 'About'
       ? (this.isScrolled = true)
-      : window.addEventListener('scroll', this.handleScroll)
+      : window.addEventListener('scroll', this.handleScroll, { passive: true })
   },
 
   methods: {
     handleScroll() {
       this.isScrolled = window.scrollY > window.screen.height / 2
+      document.querySelectorAll('.invisible').forEach((el) => el.classList.add('slide_text'))
       if (this.isScrolled) {
         window.removeEventListener('scroll', this.handleScroll)
         console.log('listener removed')
@@ -123,21 +105,33 @@ export default {
 </script>
 
 <style lang="scss">
-.invisible {
-  opacity: 0;
-}
-.slide_text {
-  animation: slide-left 2s forwards;
+.about_us_wrap {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 70px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-@keyframes slide-left {
-  0% {
-    transform: translate(101%);
-    opacity: 1;
+.about_us_item {
+  display: block;
+  transition: all 0.5s ease;
+
+  &_vertical {
+    max-width: 476px;
+    grid-area: 1/1/3/2;
+    float: inline-start;
   }
-  100% {
-    transform: translate(0%);
-    opacity: 1;
+
+  &_horizontal {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .pic_wrap {
+      max-width: 679px;
+    }
   }
 }
 

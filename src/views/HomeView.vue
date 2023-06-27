@@ -28,7 +28,7 @@
         </video>
 
         <div class="content_over_video">
-          <div class="text_wrap text_white align_l">
+          <div class="text_wrap text_white">
             <div class="project_id">{{ this.projectData[1].id }}</div>
             <h3>Project</h3>
             <h2>{{ projectData[1].title }}</h2>
@@ -113,6 +113,11 @@ export default {
     text-transform: uppercase;
     mix-blend-mode: difference;
   }
+}
+
+#featured_project_1 {
+  background-color: #000;
+  margin-top: -50px;
 }
 
 .featured_project_2 {

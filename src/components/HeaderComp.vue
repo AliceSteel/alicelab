@@ -2,16 +2,17 @@
   <div>
     <div id="side_block">
       <ul class="side_menu" id="mobile_menu" @click="toggleMenu()">
-        <li>
-          <router-link to="/about" class="menu_link"><sup>(1)</sup>About</router-link>
+        <li class="menu_link">
+          <sup class="list_counter"></sup>
+          <router-link to="/about">About</router-link>
         </li>
-        <li>
-          <router-link to="/projects" class="menu_link"><sup>(2)</sup>Projects</router-link>
+        <li class="menu_link">
+          <sup class="list_counter"></sup>
+          <router-link to="/projects">Projects</router-link>
         </li>
-        <li>
-          <router-link :to="{ name: 'About', hash: '#contact' }" class="menu_link"
-            ><sup>(3)</sup>Contact</router-link
-          >
+        <li class="menu_link">
+          <sup class="list_counter"></sup>
+          <router-link :to="{ name: 'About', hash: '#contact' }">Contact</router-link>
         </li>
       </ul>
     </div>
@@ -109,7 +110,7 @@ button.hamburger {
   top: 0;
   background-color: #777b60f3;
   height: 100vh;
-  z-index: 100;
+  z-index: 300;
   transition: all 0.3s ease;
   transform: translateX(-100%);
   padding: 12% 0;
