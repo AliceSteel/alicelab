@@ -1,24 +1,29 @@
 <template>
-  <section class="about_us_wrap">
+  <section class="about_us_wrap" id="about_us">
     <atropos class="about_us_item_vertical" :activeOffset="20" :rotateXMax="5" :shadow-scale="0">
       <img :src="aboutContent.picVertURL" alt="about us" data-atropos-offset="5" />
     </atropos>
     <!-- <div class="about_us_item_text">-->
     <div class="text_wrap">
-      <h2 class="invisible w100" style="animation-delay: 0s">
+      <h2 class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 0s">
         {{ aboutContent.titleL1 }}
       </h2>
 
-      <p class="invisible w100" style="animation-delay: 1s">
+      <p class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 1s">
         {{ aboutContent.text1 }}
       </p>
-      <p v-if="aboutContent.text2" class="invisible w100" style="animation-delay: 2s">
+      <p
+        v-if="aboutContent.text2"
+        class="invisible w100"
+        :class="{ slide_text: isScrolled }"
+        style="animation-delay: 2s"
+      >
         {{ aboutContent.text2 }}
       </p>
       <a
         v-if="this.$route.name === 'About'"
         :href="linkTo"
-        class="w100 arrow text_black invisible"
+        class="w100 arrow text_black invisible slide_text"
         style="animation-delay: 3s"
         ><span class="menu_link">{{ aboutContent.buttonText }}</span>
         <span>
@@ -39,6 +44,7 @@
         v-else
         :to="linkTo"
         class="w100 arrow text_black invisible"
+        :class="{ slide_text: isScrolled }"
         style="animation-delay: 4s"
         ><span class="menu_link">{{ aboutContent.buttonText }}</span>
         <span>
@@ -85,21 +91,18 @@ export default {
       isScrolled: false
     }
   },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY >= document.getElementById('about_us').offsetTop * 0.6
+    }
+  },
   mounted() {
-    this.$route.name === 'About'
+    this.$route.name == 'About'
       ? (this.isScrolled = true)
       : window.addEventListener('scroll', this.handleScroll, { passive: true })
   },
-
-  methods: {
-    handleScroll() {
-      this.isScrolled = window.scrollY > window.screen.height / 2
-      document.querySelectorAll('.invisible').forEach((el) => el.classList.add('slide_text'))
-      if (this.isScrolled) {
-        window.removeEventListener('scroll', this.handleScroll)
-        console.log('listener removed')
-      }
-    }
+  beforeUnmount() {
+    this.$route != 'About' ? window.removeEventListener('scroll', this.handleScroll) : null
   }
 }
 </script>

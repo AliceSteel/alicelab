@@ -14,7 +14,6 @@
         :projectContent="projectData[0]"
         :textClass="'project_text_1 text_white'"
         :svgClass="'svg_white'"
-        :linkClass="'text_white'"
         :underlineClass="'menu_link_white'"
       >
       </featured-pr-comp>
@@ -50,15 +49,12 @@
       </div>
     </section>
 
-    <section id="featured_project_3">
-      <featured-pr-comp
-        :projectContent="projectData[2]"
-        :textClass="'project_text_1 text_black'"
-        :linkClass="'text_black'"
-        :underlineClass="'menu_link'"
-      >
-      </featured-pr-comp>
-    </section>
+    <featured-pr-comp
+      :projectContent="projectData[2]"
+      :textClass="'project_text_1 text_black'"
+      :underlineClass="'menu_link'"
+    >
+    </featured-pr-comp>
   </div>
 </template>
 

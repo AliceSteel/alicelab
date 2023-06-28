@@ -36,7 +36,7 @@ export default {
   methods: {
     toggleFixedHeader() {
       console.log('header listener')
-      if (document.querySelector('section').offsetHeight !== null) {
+      if (document.querySelector('section').offsetHeight != null) {
         this.isScroll = window.scrollY > document.querySelector('section').offsetHeight
       }
     }

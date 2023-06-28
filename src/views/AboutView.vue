@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <section id="learn_about" v-if="aboutUsData !== null">
-      <about-comp :aboutContent="aboutUsData" :linkTo="'#contact'" />
-    </section>
+  <div v-if="aboutUsData !== null">
+    <about-comp :aboutContent="aboutUsData" :linkTo="'#contact'" />
 
     <section id="services"></section>
     <section id="contact">
@@ -39,40 +37,6 @@ export default {
   padding: 10vh;
   margin-top: -270px;
 }
-
-/*.container_services {
-  width: 90%;
-  max-width: 1184px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.pic_services_wrap {
-  width: 100%;
-  max-width: 1184px;
-  object-fit: cover;
-}*/
-
-/*.services_descr {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 50px;
-  margin-top: 175px;
-}
-
-.services_title {
-  grid-area: 1/1/4/2;
-}
-
-.services_item {
-  padding-bottom: 1.5rem;
-
-  h2 {
-    padding-bottom: 1rem;
-  }
-}*/
 
 @media screen and (max-width: 660px) {
   #services {

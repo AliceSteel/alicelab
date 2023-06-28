@@ -1,23 +1,33 @@
 <template>
-  <div class="container container_featured">
+  <div class="container container_featured" :id="projectContent.id">
     <div class="project_content_wrap">
       <div :class="textClass">
-        <div class="project_id" style="animation-delay: 0s">
+        <div
+          class="project_id invisible"
+          :class="{ slide_right: isScrolled }"
+          style="animation-delay: 0s"
+        >
           {{ projectContent.id }}
         </div>
 
-        <h3>Project</h3>
+        <h3 class="invisible" :class="{ slide_right: isScrolled }" style="animation-delay: 1s">
+          Project
+        </h3>
 
-        <h2>{{ projectContent.title }}</h2>
+        <h2 class="invisible" :class="{ slide_right: isScrolled }" style="animation-delay: 2s">
+          {{ projectContent.title }}
+        </h2>
 
-        <p>{{ projectContent.text }}</p>
+        <p class="invisible" :class="{ slide_right: isScrolled }" style="animation-delay: 3s">
+          {{ projectContent.text }}
+        </p>
 
         <a
           :href="projectContent.websiteUrl"
           target="_blank"
-          class="arrow"
-          style="animation-delay: 0s"
-          :class="linkClass"
+          class="arrow invisible"
+          :class="{ slide_right: isScrolled }"
+          style="animation-delay: 4s"
           ><span :class="underlineClass">View Project</span>
           <span>
             <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -51,8 +61,23 @@ export default {
     },
     textClass: String,
     svgClass: String,
-    underlineClass: String,
-    linkClass: String
+    underlineClass: String
+  },
+  data() {
+    return {
+      isScrolled: false,
+      id: this.projectContent.id
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  },
+  methods: {
+    handleScroll() {
+      console.log(this.id + document.getElementById(this.id).offsetTop)
+      this.isScrolled = window.scrollY >= document.getElementById(this.id).offsetTop * 0.75
+      this.isScrolled ? window.removeEventListener('scroll', this.handleScroll) : null
+    }
   }
 }
 </script>
