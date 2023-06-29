@@ -75,10 +75,12 @@
 <script>
 import 'atropos/scss'
 import Atropos from 'atropos/vue'
+import isScrolled from '@/mixins/isScrolled.js'
 
 export default {
   name: 'AboutComp',
   components: { Atropos },
+  mixins: [isScrolled],
   props: {
     aboutContent: {
       required: true,
@@ -86,23 +88,9 @@ export default {
     },
     linkTo: String
   },
-  data() {
-    return {
-      isScrolled: false
-    }
-  },
-  methods: {
-    handleScroll() {
-      this.isScrolled = window.scrollY >= document.getElementById('about_us').offsetTop * 0.6
-    }
-  },
+
   mounted() {
-    this.$route.name == 'About'
-      ? (this.isScrolled = true)
-      : window.addEventListener('scroll', this.handleScroll, { passive: true })
-  },
-  beforeUnmount() {
-    this.$route != 'About' ? window.removeEventListener('scroll', this.handleScroll) : null
+    this.$route.name == 'About' ? (this.isScrolled = true) : this.handleScroll('about_us')
   }
 }
 </script>

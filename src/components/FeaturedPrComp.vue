@@ -50,10 +50,12 @@
 <script>
 import 'atropos/scss'
 import Atropos from 'atropos/vue'
+import isScrolled from '@/mixins/isScrolled.js'
 
 export default {
   name: 'FeaturesProjectComp',
   components: { Atropos },
+  mixins: [isScrolled],
   props: {
     projectContent: {
       type: Object,
@@ -63,21 +65,8 @@ export default {
     svgClass: String,
     underlineClass: String
   },
-  data() {
-    return {
-      isScrolled: false,
-      id: this.projectContent.id
-    }
-  },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll, { passive: true })
-  },
-  methods: {
-    handleScroll() {
-      console.log(this.id + document.getElementById(this.id).offsetTop)
-      this.isScrolled = window.scrollY >= document.getElementById(this.id).offsetTop * 0.75
-      this.isScrolled ? window.removeEventListener('scroll', this.handleScroll) : null
-    }
+    this.handleScroll(this.projectContent.id)
   }
 }
 </script>
