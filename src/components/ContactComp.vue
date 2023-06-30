@@ -107,7 +107,7 @@ export default {
           X-Viber-Auth-Token:${this.APP_KEY_Viber}
           Content-Type:application/json
           {
-            "url":"https://alicelab.vercel.app",
+            "url":"https://alicelab.vercel.app/about#contact",
             "event_types":[
                 "delivered",
                 "seen",
