@@ -107,18 +107,18 @@ export default {
           X-Viber-Auth-Token:${this.APP_KEY_Viber}
           Content-Type:application/json
           {
-   "url":"https://my.host.com",
-   "event_types":[
-      "delivered",
-      "seen",
-      "failed",
-      "subscribed",
-      "unsubscribed",
-      "conversation_started"
-   ],
-   "send_name": true,
-   "send_photo": true
-}
+            "url":"https://alicelab.vercel.app",
+            "event_types":[
+                "delivered",
+                "seen",
+                "failed",
+                "subscribed",
+                "unsubscribed",
+                "conversation_started"
+            ],
+            "send_name": true,
+            "send_photo": true
+          }
           `
         )
           .then((resp) => {
