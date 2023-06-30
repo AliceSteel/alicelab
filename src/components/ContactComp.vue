@@ -55,6 +55,7 @@ export default {
   name: 'ContactComp',
   data() {
     return {
+      APP_KEY_Viber: '5142c8e60ea7de80-95d4025c3024e7e2-9b203e163d25aac2',
       API_BOT_ID: '5430381288:AAE_eQ93YVTYwbmZ8s_uAyzqmgqXbPnE_Fk',
       CHAT_ID: '-1001772014948',
       name: '',
@@ -93,21 +94,38 @@ export default {
       }
 
       if (valid) {
-        const message_text =
+        /*const message_text =
           '<i>Feedback data</i>' +
           '%0a<b>Name: </b>' +
           this.name +
           '%0a<b>Email: </b>' +
           this.email +
           '%0a<b>Message: </b>' +
-          this.message
+          this.message*/
         fetch(
-          `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=FromAliceLab${message_text}&parse_mode=HTML`
+          `https://chatapi.viber.com/pa/set_webhook
+          X-Viber-Auth-Token:${this.APP_KEY_Viber}
+          Content-Type:application/json
+          {
+   "url":"https://my.host.com",
+   "event_types":[
+      "delivered",
+      "seen",
+      "failed",
+      "subscribed",
+      "unsubscribed",
+      "conversation_started"
+   ],
+   "send_name": true,
+   "send_photo": true
+}
+          `
         )
           .then((resp) => {
             return resp.json()
           })
           .then((resp) => {
+            console.log(resp)
             if (resp.ok) {
               this.answer.success = true
               this.answer.text = 'Message successfully sent'
