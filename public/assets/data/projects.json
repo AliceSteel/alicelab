@@ -22,7 +22,7 @@
     "id": "03",
     "title": "E-Commerce.",
     "descr": "Online shop template built with React(+Router-DOM, Redux), Firebase and Stripe. Deployed on Netlify.",
-    "pic1": "",
+    "pic1": "/assets/images/veil@828.jpg",
     "pic5": "/assets/images/clients/roots@476.jpg",
     "websiteUrl": "https://e-commerce-template-2022.netlify.app/"
   }
