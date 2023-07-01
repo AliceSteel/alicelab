@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #header {
   width: 100%;
   position: fixed;
@@ -82,10 +82,6 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-h3 {
-  text-transform: uppercase;
-  mix-blend-mode: difference;
 }
 
 .scroll #header {

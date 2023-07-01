@@ -57,6 +57,9 @@ h3,
 h2 {
   @include text_title;
 }
+h3 {
+  text-transform: uppercase;
+}
 
 p {
   @include text_p(14px);

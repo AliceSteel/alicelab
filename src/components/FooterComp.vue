@@ -5,7 +5,12 @@
         <div class="copyright">© 2023 - ALICELAB / All Rights Reserved</div>
         <div class="social">
           <ul>
-            <li>Contact on socials:</li>
+            <li>More ways to contact:</li>
+            <li>
+              <a href="mailto:alicedevlab@gmail.com" rel="nofollow, noreferrer" class="menu_link"
+                >Email</a
+              >
+            </li>
             <li>
               <a
                 href="https://www.linkedin.com/in/olga-garkusha-49598a12b/"

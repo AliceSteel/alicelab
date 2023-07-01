@@ -55,7 +55,6 @@ export default {
   name: 'ContactComp',
   data() {
     return {
-      APP_KEY_Viber: '5142c8e60ea7de80-95d4025c3024e7e2-9b203e163d25aac2',
       API_BOT_ID: '5430381288:AAE_eQ93YVTYwbmZ8s_uAyzqmgqXbPnE_Fk',
       CHAT_ID: '-1001772014948',
       name: '',
@@ -89,48 +88,32 @@ export default {
         }
       }
       if (!this.message || this.message.length < 2) {
-        this.errors.message = 'Message is required.'
+        this.errors.message = 'Message longer than 2 characters is required.'
         valid = false
       }
 
       if (valid) {
-        /*const message_text =
-          '<i>Feedback data</i>' +
+        const message_text =
+          '<i>Message from AliceLabWebsite</i>' +
           '%0a<b>Name: </b>' +
           this.name +
           '%0a<b>Email: </b>' +
           this.email +
           '%0a<b>Message: </b>' +
-          this.message*/
+          this.message
         fetch(
-          `https://chatapi.viber.com/pa/set_webhook
-          X-Viber-Auth-Token:${this.APP_KEY_Viber}
-          Content-Type:application/json
-          {
-            "url":"https://alicelab.vercel.app/about#contact",
-            "event_types":[
-                "delivered",
-                "seen",
-                "failed",
-                "subscribed",
-                "unsubscribed",
-                "conversation_started"
-            ],
-            "send_name": true,
-            "send_photo": true
-          }
-          `
+          `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=${message_text}&parse_mode=HTML`
         )
           .then((resp) => {
             return resp.json()
           })
           .then((resp) => {
-            console.log(resp)
             if (resp.ok) {
               this.answer.success = true
               this.answer.text = 'Message successfully sent'
               this.name = this.email = this.message = ''
             } else {
+              console.log(resp)
               this.answer.success = false
               this.answer.text = resp.description
             }
@@ -139,7 +122,8 @@ export default {
               this.answer.text = ''
             }, 5000)
           })
-          .catch(() => {
+          .catch((er) => {
+            console.log(er)
             this.answer.success = false
             this.answer.text = 'AJAX error. Please try again later'
           })

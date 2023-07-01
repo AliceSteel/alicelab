@@ -15,20 +15,20 @@
   {
     "company": "KreepMaster",
     "id": "02",
-    "title": "KreepMaster Official Website",
-    "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "title": "KreepMaster",
+    "descr": "Official website for KreepMaster band.",
     "pic1": "/assets/images/project_reebok@1440.jpg",
     "pic2": "/assets/images/palm@1920.jpg",
     "pic3": "/assets/images/sea@1920.jpg",
     "pic4": "/assets/images/leaf@1920.jpg",
     "pic5": "/assets/images/clients/kreepmaster.jpg",
     "video": "/assets/images/girl_rolling",
-    "websiteUrl": "https://metalhead-six.vercel.app/"
+    "websiteUrl": "#"
   },
   {
     "company": "E-commerce",
     "id": "03",
-    "title": "Be Yourself",
+    "title": "A Template for an E-Commerce.",
     "descr": "Online shop template built with React(+Router-DOM, Redux), Firebase and Stripe. Deployed on Netlify.",
     "pic1": "/assets/images/veil@828.jpg",
     "pic2": "/assets/images/girl_p4@1440.jpg",
