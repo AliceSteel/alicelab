@@ -58,7 +58,6 @@ export default {
     },
     calcPicPosition(e) {
       this.top = e.target.offsetTop > 800 ? '800px' : e.target.offsetTop + 100 + 'px'
-      console.log(e.target.offsetTop)
       this.right = Math.floor(Math.random() * (18 - 8 + 1)) + 8 + '%'
     }
   }

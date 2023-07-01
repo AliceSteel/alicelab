@@ -48,16 +48,6 @@ export default {
       default: '#000'
     }
   },
-
-  /* created() {
-    window.addEventListener('scroll', this.toggleFixedHeader)
-  },
-  methods: {
-    toggleFixedHeader() {
-      if (document.querySelector('section').offsetHeight !== null) {
-        this.isScroll = window.scrollY > document.querySelector('section').offsetHeight
-      }
-    },*/
   methods: {
     toggleMenu() {
       document.querySelector('.hamburger').classList.toggle('is-active')

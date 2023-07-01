@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     toggleFixedHeader() {
-      /*  if (document.querySelector('section')) {*/
       this.isScroll = window.scrollY > document.querySelector('section')?.offsetHeight
     }
   },
