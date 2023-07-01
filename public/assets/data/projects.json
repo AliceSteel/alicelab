@@ -13,22 +13,22 @@
     "websiteUrl": "https://metalhead-six.vercel.app/"
   },
   {
-    "company": "KreepMaster",
+    "company": "Fyrre Magazine",
     "id": "02",
-    "title": "KreepMaster",
-    "descr": "Official website for KreepMaster band.",
-    "pic1": "/assets/images/project_reebok@1440.jpg",
-    "pic2": "/assets/images/palm@1920.jpg",
-    "pic3": "/assets/images/sea@1920.jpg",
-    "pic4": "/assets/images/leaf@1920.jpg",
-    "pic5": "/assets/images/clients/kreepmaster.jpg",
+    "title": "Art and life",
+    "descr": "A Template for an Art Magazine.",
+    "pic1": "",
+    "pic2": "",
+    "pic3": "",
+    "pic4": "",
+    "pic5": "/assets/images/leaf@1920.jpg",
     "video": "/assets/images/girl_rolling",
-    "websiteUrl": "#"
+    "websiteUrl": "https://art-and-life.netlify.app/"
   },
   {
     "company": "E-commerce",
     "id": "03",
-    "title": "A Template for an E-Commerce.",
+    "title": "E-Commerce.",
     "descr": "Online shop template built with React(+Router-DOM, Redux), Firebase and Stripe. Deployed on Netlify.",
     "pic1": "/assets/images/veil@828.jpg",
     "pic2": "/assets/images/girl_p4@1440.jpg",
