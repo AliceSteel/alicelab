@@ -1,7 +1,7 @@
 <template>
   <div v-if="aboutUsData !== null && projectData !== null">
     <section>
-      <atropos class="homepage" :rotateXMax="5" :rotateYMax="5" :rotateTouch="true">
+      <atropos class="homepage" :rotateXMax="5" :rotateYMax="5" :rotateTouch="false">
         <img src="/assets/images/Homepage@1440.png" alt="homepage" data-atropos-offset="-5" />
         <h1>{{ aboutUsData.h1 }}</h1>
       </atropos>
