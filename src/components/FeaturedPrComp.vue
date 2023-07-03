@@ -1,5 +1,5 @@
 <template>
-  <div class="container container_featured" :id="projectContent.id">
+  <div class="container" :id="projectContent.id">
     <div class="project_content_wrap">
       <div :class="textClass">
         <div
@@ -71,7 +71,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container {
+  width: 100%;
+  padding: 135px 0 114px 127px;
+}
 .project_content_wrap {
   width: 100%;
   display: flex;
@@ -102,7 +106,7 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
-  .container_featured {
+  .container {
     padding: 0;
   }
   .project_content_wrap {
