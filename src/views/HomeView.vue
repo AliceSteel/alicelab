@@ -1,7 +1,7 @@
 <template>
   <div v-if="aboutUsData !== null && projectData !== null">
     <section>
-      <atropos class="homepage" :rotateXMax="5" :rotateYMax="5">
+      <atropos class="homepage" :rotateXMax="5" :rotateYMax="5" :rotateTouch="true">
         <img src="/assets/images/Homepage@1440.png" alt="homepage" data-atropos-offset="-5" />
         <h1>{{ aboutUsData.h1 }}</h1>
       </atropos>
@@ -95,6 +95,7 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  //overflow-x: hidden;
   position: relative;
   img {
     height: 100%;
