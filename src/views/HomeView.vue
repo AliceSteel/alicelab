@@ -6,12 +6,23 @@
         <h1>{{ aboutUsData.h1 }}</h1>
       </atropos>
     </section>
+
     <!-- description section--------------------------------------------------------------- -->
     <about-comp :aboutContent="aboutUsData" :linkTo="'/about'"> </about-comp>
+
     <!-- featured section------------------------------------------------------------------ -->
-    <section id="featured_project_1">
+    <section class="featured_project_1">
       <featured-pr-comp
         :projectContent="projectData[0]"
+        :textClass="'project_text_1 text_white'"
+        :svgClass="'svg_white'"
+        :underlineClass="'menu_link_white'"
+      >
+      </featured-pr-comp>
+    </section>
+    <section class="featured_project_1">
+      <featured-pr-comp
+        :projectContent="projectData[1]"
         :textClass="'project_text_1 text_white'"
         :svgClass="'svg_white'"
         :underlineClass="'menu_link_white'"
@@ -28,11 +39,11 @@
 
         <div class="content_over_video">
           <div class="text_wrap text_white">
-            <div class="project_id">{{ this.projectData[1].id }}</div>
+            <div class="project_id">{{ this.projectData[2].id }}</div>
             <h3>Project</h3>
-            <h2>{{ projectData[1].title }}</h2>
-            <p>{{ projectData[1].descr }}</p>
-            <a :href="projectData[1].websiteUrl" target="_blank" class="arrow text_white">
+            <h2>{{ projectData[2].title }}</h2>
+            <p>{{ projectData[2].descr }}</p>
+            <a :href="projectData[2].websiteUrl" target="_blank" class="arrow text_white">
               <span class="menu_link_white">View Project</span>
               <span>
                 <svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
@@ -48,13 +59,6 @@
         </div>
       </div>
     </section>
-
-    <featured-pr-comp
-      :projectContent="projectData[2]"
-      :textClass="'project_text_1 text_black'"
-      :underlineClass="'menu_link'"
-    >
-    </featured-pr-comp>
   </div>
 </template>
 
@@ -111,7 +115,7 @@ export default {
   }
 }
 
-#featured_project_1 {
+.featured_project_1 {
   background-color: #000;
   margin-top: -50px;
 }

@@ -3,7 +3,6 @@
     <atropos class="about_us_item_vertical" :activeOffset="20" :rotateXMax="5" :shadow-scale="0">
       <img :src="aboutContent.picVertURL" alt="about us" data-atropos-offset="5" />
     </atropos>
-    <!-- <div class="about_us_item_text">-->
     <div class="text_wrap">
       <h2 class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 0s">
         {{ aboutContent.titleL1 }}

@@ -1,21 +1,21 @@
 [
   {
-    "company": "MetalHead",
+    "company": "KreepMaster",
     "id": "01",
+    "title": "KreepMaster Official website",
+    "descr": "A relentless fusion of metallic mayhem and cybernetic chaos.",
+    "pic1": "/assets/images/clients/kreepmasterHome.png",
+    "pic5": "/assets/images/clients/kreepmaster.jpg",
+    "websiteUrl": "https://kreepmaster.vercel.app/"
+  },
+  {
+    "company": "MetalHead",
+    "id": "02",
     "title": "MetalHead Music App",
     "descr": "MetalHead is a music-sharing app, where unprofessional musicians can hear opinion on their creations and music consumers can discover new songs. Built with Vue(+Vue-Route, Pinia) and Firebase, deployed on Vercel.",
     "pic1": "/assets/images/drummer.png",
     "pic5": "/assets/images/clients/zombieGuitar.png",
     "websiteUrl": "https://metalhead-six.vercel.app/"
-  },
-  {
-    "company": "Fyrre Magazine",
-    "id": "02",
-    "title": "Art and life",
-    "descr": "A Template for an Art Magazine.",
-    "pic1": "",
-    "pic5": "/assets/images/clients/clients@647.jpg",
-    "websiteUrl": "https://art-and-life.netlify.app/"
   },
   {
     "company": "E-commerce",
@@ -25,5 +25,14 @@
     "pic1": "/assets/images/veil@828.jpg",
     "pic5": "/assets/images/clients/roots@476.jpg",
     "websiteUrl": "https://e-commerce-template-2022.netlify.app/"
+  },
+  {
+    "company": "Fyrre Magazine",
+    "id": "04",
+    "title": "Art and life",
+    "descr": "A Template for an Art Magazine.",
+    "pic1": "",
+    "pic5": "/assets/images/clients/clients@647.jpg",
+    "websiteUrl": "https://art-and-life.netlify.app/"
   }
 ]
