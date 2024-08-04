@@ -12,7 +12,7 @@
           name="name"
         />
         <label class="floating_label"><sup>(1) </sup>Name</label>
-        <div v-if="this.errors.name.length" class="errors_panel">{{ errors.name }}</div>
+        <div v-if="errors.name.length" class="errors_panel">{{ errors.name }}</div>
       </div>
 
       <div class="form_content">
@@ -25,7 +25,7 @@
           name="email"
         />
         <label class="floating_label"><sup>(2) </sup>Email</label>
-        <div v-if="this.errors.email" class="errors_panel">{{ errors.email }}</div>
+        <div v-if="errors.email" class="errors_panel">{{ errors.email }}</div>
       </div>
 
       <div class="form_content_textarea">
@@ -39,24 +39,29 @@
           placeholder=" "
         ></textarea>
         <label class="floating_label"><sup>(3) </sup>Message</label>
-        <div v-if="this.errors.message.length" class="errors_panel">{{ errors.message }}</div>
+        <div v-if="errors.message.length" class="errors_panel">{{ errors.message }}</div>
       </div>
 
       <button id="form_btn" type="submit">
         <span><sup>(4) </sup>Submit</span>
       </button>
-      <div v-if="this.answer.success" class="success">{{ answer.text }}</div>
+      <div
+        v-if="answer"
+        :class="{ success: answer.success, errors_panel: answer.success === false }"
+      >
+        {{ answer.text }}
+      </div>
     </form>
   </section>
 </template>
 
 <script>
+import Email from '@/utilities/email'
+
 export default {
   name: 'ContactComp',
   data() {
     return {
-      API_BOT_ID: '5430381288:AAE_eQ93YVTYwbmZ8s_uAyzqmgqXbPnE_Fk',
-      CHAT_ID: '-1001772014948',
       name: '',
       email: '',
       message: '',
@@ -72,7 +77,7 @@ export default {
     }
   },
   methods: {
-    checkAndSend() {
+    async checkAndSend() {
       let valid = true
       if (!this.name || this.name.length <= 1) {
         this.errors.name = 'Name longer than 1 letter is required.'
@@ -91,31 +96,25 @@ export default {
         this.errors.message = 'Message longer than 2 characters is required.'
         valid = false
       }
-
       if (valid) {
-        const message_text =
-          '<i>Message from AliceLabWebsite</i>' +
-          '%0a<b>Name: </b>' +
-          this.name +
-          '%0a<b>Email: </b>' +
-          this.email +
-          '%0a<b>Message: </b>' +
-          this.message
-        fetch(
-          `https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=${message_text}&parse_mode=HTML`
-        )
+        Email.send({
+          Host: 'smtp.elasticemail.com',
+          Username: 'alicedevlab@gmail.com',
+          Password: '4E4CB299494A0BC888DA1CA24CA458DC7319',
+          To: 'alicedevlab@gmail.com',
+          From: 'alicedevlab@gmail.com',
+          Subject: 'Message from AliceDevlab App',
+          Body: this.name + ' from ' + this.email + ' sends message: ' + this.message
+        })
           .then((resp) => {
-            return resp.json()
-          })
-          .then((resp) => {
-            if (resp.ok) {
+            if (resp == 'OK') {
               this.answer.success = true
               this.answer.text = 'Message successfully sent'
               this.name = this.email = this.message = ''
             } else {
               console.log(resp)
               this.answer.success = false
-              this.answer.text = resp.description
+              this.answer.text = resp
             }
             setTimeout(() => {
               this.answer.success = null

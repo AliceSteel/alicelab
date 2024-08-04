@@ -1,1 +1,27 @@
-@font-face{font-family:"SF Pro Display";src:url(SFProDisplay-Regular.eot);src:local("Gilroy SFProDisplay-Regular"),local("Gilroy-SFProDisplay-Regular"),url(SFProDisplay-Regular.eot?#iefix) format("embedded-opentype"),url(SFProDisplay-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:"SF Pro Display";src:url(SFProDisplay-Medium.eot);src:local("SFProDisplay-Medium"),local("SFProDisplay-Medium"),url(GSFProDisplay-Medium.eot?#iefix) format("embedded-opentype"),url(SFProDisplay-Medium.ttf) format("truetype");font-weight:500;font-style:normal}@font-face{font-family:"SF Pro Display";src:url(SFProDisplay-Bold.eot);src:local("SFProDisplay-Bold"),local("SFProDisplay-Bold"),url(SFProDisplay-Bold?#iefix) format("embedded-opentype"),url(SFProDisplay-Bold.ttf) format("truetype");font-weight:700;font-style:normal}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url(SFProDisplay-Regular.eot);
+  src: local('Gilroy SFProDisplay-Regular'), local('Gilroy-SFProDisplay-Regular'),
+    url(SFProDisplay-Regular.eot?#iefix) format('embedded-opentype'),
+    url(SFProDisplay-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url(SFProDisplay-Medium.eot);
+  src: local('SFProDisplay-Medium'), local('SFProDisplay-Medium'),
+    url(GSFProDisplay-Medium.eot?#iefix) format('embedded-opentype'),
+    url(SFProDisplay-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url(SFProDisplay-Bold.eot);
+  src: local('SFProDisplay-Bold'), local('SFProDisplay-Bold'),
+    url(SFProDisplay-Bold?#iefix) format('embedded-opentype'),
+    url(SFProDisplay-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
