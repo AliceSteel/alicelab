@@ -1,8 +1,17 @@
 [
   {
-    "company": "KreepMaster",
+    "company": "Alice Shop",
     "id": "01",
-    "title": "KreepMaster Official website",
+    "title": "Shopify E-Com",
+    "descr": "A Headless NuxtJS E-Commerce site, with Shopify StorefrontAPI as the backend. The site is deployed on Vercel.",
+    "pic1": "/assets/images/clients/history_of_paper.png",
+    "pic5": "/assets/images/clients/roots@476.jpg",
+    "websiteUrl": "https://alice-shop.vercel.app"
+  },
+  {
+    "company": "KreepMaster",
+    "id": "02",
+    "title": "KreepMaster band Official website",
     "descr": "A relentless fusion of metallic mayhem and cybernetic chaos.",
     "pic1": "/assets/images/clients/kreepmasterHome.png",
     "pic5": "/assets/images/clients/kreepmaster.jpg",
@@ -10,22 +19,14 @@
   },
   {
     "company": "MetalHead",
-    "id": "02",
+    "id": "03",
     "title": "MetalHead Music App",
     "descr": "MetalHead is a music-sharing app, where unprofessional musicians can hear opinion on their creations and music consumers can discover new songs. Built with Vue(+Vue-Route, Pinia) and Firebase, deployed on Vercel.",
     "pic1": "/assets/images/drummer.png",
     "pic5": "/assets/images/clients/zombieGuitar.png",
     "websiteUrl": "https://metalhead-six.vercel.app/"
   },
-  {
-    "company": "E-commerce",
-    "id": "03",
-    "title": "E-Commerce.",
-    "descr": "Online shop template built with React(+Router-DOM, Redux), Firebase and Stripe. Deployed on Netlify.",
-    "pic1": "/assets/images/veil@828.jpg",
-    "pic5": "/assets/images/clients/roots@476.jpg",
-    "websiteUrl": "https://e-commerce-template-2022.netlify.app/"
-  },
+
   {
     "company": "Fyrre Magazine",
     "id": "04",

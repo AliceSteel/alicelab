@@ -15,7 +15,7 @@
 @mixin text_btn {
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.2rem;
 }
 
@@ -59,7 +59,7 @@ h3 {
 }
 
 p {
-  @include text_p(1rem);
+  @include text_p(1.2rem);
 }
 
 .text_white {

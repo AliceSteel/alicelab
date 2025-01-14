@@ -8,14 +8,14 @@
         {{ aboutContent.titleL1 }}
       </h2>
 
-      <p class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 1s">
+      <p class="invisible w100" :class="{ slide_text: isScrolled }" style="animation-delay: 0.5s">
         {{ aboutContent.text1 }}
       </p>
       <p
         v-if="aboutContent.text2"
         class="invisible w100"
         :class="{ slide_text: isScrolled }"
-        style="animation-delay: 2s"
+        style="animation-delay: 1s"
       >
         {{ aboutContent.text2 }}
       </p>
@@ -23,7 +23,7 @@
         v-if="this.$route.name === 'About'"
         :href="linkTo"
         class="w100 arrow text_black invisible slide_text"
-        style="animation-delay: 3s"
+        style="animation-delay: 1.5s"
         ><span class="menu_link">{{ aboutContent.buttonText }}</span>
         <span>
           <svg
@@ -44,7 +44,7 @@
         :to="linkTo"
         class="w100 arrow text_black invisible"
         :class="{ slide_text: isScrolled }"
-        style="animation-delay: 4s"
+        style="animation-delay: 2s"
         ><span class="menu_link">{{ aboutContent.buttonText }}</span>
         <span>
           <svg

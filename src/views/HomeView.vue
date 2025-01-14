@@ -165,7 +165,7 @@ export default {
       display: none;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       max-height: 2.3rem;
       overflow: hidden;
     }
