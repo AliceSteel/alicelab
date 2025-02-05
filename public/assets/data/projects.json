@@ -18,13 +18,13 @@
     "websiteUrl": "https://kreepmaster.vercel.app/"
   },
   {
-    "company": "MetalHead",
+    "company": "TuneThread",
     "id": "03",
-    "title": "MetalHead Music App",
-    "descr": "MetalHead is a music-sharing app, where unprofessional musicians can hear opinion on their creations and music consumers can discover new songs. Built with Vue(+Vue-Route, Pinia) and Firebase, deployed on Vercel.",
+    "title": "Music App Forum",
+    "descr": "TuneThread is a music-sharing app, where unprofessional musicians can hear opinion on their creations and music consumers can discover new songs. Built with Vue(+Vue-Route, Pinia) and Firebase, deployed on Vercel.",
     "pic1": "/assets/images/drummer.png",
     "pic5": "/assets/images/clients/zombieGuitar.png",
-    "websiteUrl": "https://metalhead-six.vercel.app/"
+    "websiteUrl": "https://tunethread.vercel.app/"
   },
 
   {
