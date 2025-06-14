@@ -24,12 +24,7 @@
       </router-link>
 
       <nav class="burger_menu">
-        <button
-          class="hamburger hamburger--spin"
-          type="button"
-          aria-label="Toggle Menu"
-          @click="toggleMenu()"
-        >
+        <button class="hamburger hamburger--spin" type="button" @click="toggleMenu()">
           <span class="hamburger-box">
             <span class="hamburger-inner" :style="'background-color:' + color"></span>
           </span>
