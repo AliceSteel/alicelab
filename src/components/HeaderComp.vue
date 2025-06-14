@@ -24,7 +24,12 @@
       </router-link>
 
       <nav class="burger_menu">
-        <button class="hamburger hamburger--spin" type="button" @click="toggleMenu()">
+        <button
+          class="hamburger hamburger--spin"
+          type="button"
+          aria-label="Toggle Menu"
+          @click="toggleMenu()"
+        >
           <span class="hamburger-box">
             <span class="hamburger-inner" :style="'background-color:' + color"></span>
           </span>
@@ -84,9 +89,11 @@ export default {
   width: 100%;
   max-width: 93px;
 }
+
 button.hamburger {
   padding: 0;
 }
+
 //Side Menu:__________________________________
 
 #side_block {
